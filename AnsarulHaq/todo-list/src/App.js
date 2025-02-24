@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function App() {
     const [task, setTask] = useState("");
+    const [description, setDescription] = useState("");
     const addTask=()=>{
        
     }
@@ -21,10 +22,17 @@ function App() {
 
       <main className="main">
         <div className="form">
-            <input name="task" type="text" placeholder="Enter task here!" 
+            <input className="form--input form--input-task" name="task" type="text" placeholder="Enter task here!" 
             value={task}
             onChange={(e)=> setTask(e.target.value)}
             />
+            <input className="form--input form--input-description" name="description" type="text" placeholder="Enter task description here!" 
+            value={description}
+            onChange={(e)=> setTask(e.target.value)}
+            />
+            <button className="form--button">
+            <span class="material-symbols-outlined">+</span>
+            </button>
         </div>
         {todos.map((todo, index) => {
           //   const title = todo.title;
